@@ -101,6 +101,8 @@ This README is designed to guide you through the process of creating this simple
    5. Create a new table column for the string value of name
    6. Create a new table column for the floating point value of cost
    7. The end result should be similar to the Migration file in this repository
+   8. Using the command line terminal, enter into the *server* folder
+   9. Enter the command ``` node ace migration:run ```
 7. **TEST THE BACKEND APPLICATION USING POSTMAN**
    1. Go to https://gold-sunset-148328.postman.co/ and make an account
    2. Download the PostMan Desktop Agent
