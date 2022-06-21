@@ -20,6 +20,16 @@ This README is designed to guide you through the process of creating this simple
     1. Enter the command ``` npm init adonis-ts-app@latest server ```
     2. When prompted, select the *api* installation path
     3. Use all default options to complete the installation
+    4. Using the command line terminal, enter into the new *server* folder
+    5. Enter the command ``` npm i @adonisjs/lucid ```
+    6. Enter the following command all at once 
+``` node ace configure @adonisjs/lucid ```
+``` # CREATE: config/database.ts ```
+``` # UPDATE: .env,.env.example ```
+``` # UPDATE: tsconfig.json { types += "@adonisjs/lucid" } ```
+``` # UPDATE: .adonisrc.json { commands += "@adonisjs/lucid/build/commands" } ```
+``` # UPDATE: .adonisrc.json { providers += "@adonisjs/lucid" } ```
+    7. When prompted, select the PostgreSQL database driver option
 6. Finally, create your initial project commit by doing the following:
     1. Enter the command ``` git add -A ```
     2. Enter the command ``` git commit -m "Initial Commit" ```
