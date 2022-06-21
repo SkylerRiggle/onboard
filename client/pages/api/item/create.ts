@@ -6,8 +6,8 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   await axios
     .post(url, {
-        name: 'Orange',
-        cost: 123
+        name: req.body.name,
+        cost: req.body.cost
     })
     .catch(({ err }) => {
         res.status(400).json({ err })

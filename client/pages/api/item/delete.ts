@@ -6,7 +6,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
   await axios
     .post(url, {
-        id: '2'
+        id: req.body.id
     })
     .catch(({ err }) => {
         res.status(400).json({ err })

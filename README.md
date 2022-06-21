@@ -176,3 +176,12 @@ This README is designed to guide you through the process of creating this simple
    1. Within this file, write an export that uses axios to access the *delete* controller route
    2. The URL should be http://127.0.0.1:3333/api/item/create
    3. The end result should be similar to the Create API file in this repository
+7. This step highly depends on your implementation of your frontend application, but you will now need to write functions to call these API routes
+   1. Use online resources and this repository as a guide
+8. Finally, we need to test the application
+   1. Using the command line terminal, enter into the *client* folder
+   2. Enter the command ``` npm run dev ```
+   3. While the test is running, use the browser to enter the URL http://localhost:3000/ to see your website
+   4. Using a different command line terminal, enter into the *server* folder
+   5. Enter the command ``` node ace serve --watch ```
+   6. You should now be able to test and finalize the site
