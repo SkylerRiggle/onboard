@@ -136,6 +136,24 @@ This README is designed to guide you through the process of creating this simple
 <br />
 
 **FRONTEND APPLICATION**
+1. **REMOVE THE TEMPLATE APPLICATION**
+   1. Open the *client* folder in Visual Studio Code
+   2. Delete the folder with the path *client/pages/api*
+   3. Delete the contents inside the initial *div* component in the file *client/pages/index.tsx*
+      1. Also delete the import for Head and Image
+2. **CREATE THE WEBSITE INTERFACE**
+   1. Open the *client* folder in Visual Studio Code
+   2. Open the file with the path *client/pages/index.tsx*
+   3. Create a frontend application with elements meant to display items, create items, and delete items
+   4. Since your application is likely to be unique to you, the only resource we can offer here is Google (https://www.google.com/) and the repositorie's client application
+      1. *NOTE: This application does come with some css stylesheets that can be found in the folder client/styles*
+      2. While styling is not the most important thing at the moment, feel free to play around with the look of the site
+3. **TEST THE WEBSITE INTERFACE**
+   1. Using the command line terminal, enter into the *client* folder
+   2. Enter the command ``` npm run dev ```
+      1. To terminate the test, simply hit ``` ctrl+c ``` in the command line terminal and enter ``` y ```
+   3. Using your browser, enter the URL http://localhost:3000/ to see your website
+   4. From here, simply tweak the site until you get the desired look and feel
 
 <br />
 <br />
