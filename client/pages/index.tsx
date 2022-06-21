@@ -1,4 +1,7 @@
 import type { NextPage } from 'next'
+import Image from 'next/image'
+import Popup from 'reactjs-popup';
+import Trash from '../assets/images/trash.png'
 
 const Home: NextPage = () => {
   return (
@@ -7,14 +10,47 @@ const Home: NextPage = () => {
 
       <nav>
         <ul>
-          <li>ITEM</li>
+          <ListItem></ListItem>
         </ul>
+
+        <Popup trigger={<button>ADD ITEM</button>} position='top center'>
+          <div className='popup'>
+            <p>Input Item Information:</p>
+            
+            <div>
+              <label>Name: </label>
+              <input type="text" />
+            </div>
+
+            <div>
+              <label>Cost: </label>
+              <input type="number" />
+            </div>
+
+            <button onClick={(e) => console.log("ADD")}>ADD</button>
+          </div>
+        </Popup>
       </nav>
 
       <div className='footer'>
         <h2>TOTAL: $</h2>
         <h2>00.00</h2>
       </div>
+    </div>
+  )
+}
+
+const ListItem: NextPage = () => {
+  return (
+    <div>
+      <div>
+        <p>NAME</p>
+        <p>$COST</p>
+      </div>
+
+      <button onClick={(e) => console.log("DELETE")}>
+        <Image src={Trash} width='75px' height='75px'/>
+      </button>
     </div>
   )
 }
