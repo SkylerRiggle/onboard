@@ -57,3 +57,9 @@ This README is designed to guide you through the process of creating this simple
 <br />
 
 **FRONTEND APPLICATION**
+
+<br />
+<br />
+<br />
+
+**FRONTEND-BACKEND CONNECTION**
