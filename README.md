@@ -62,10 +62,16 @@ Route.get('/', async () => {
   return { hello: 'world' }
 })
 ```
-5. **INITIALIZE PGADMIN DATABASE**
-6. **CREATE A NEW MIGRATION**
+   3. Create a new route group with the prefix *api*
+   4. Create a new nested route group within the *api* group with the prefix *item*
+   5. Create a route corresponding to each method written in the ItemsController
+   6. The end result should be similar to the following:
+```js
+```
+1. **INITIALIZE PGADMIN DATABASE**
+2. **CREATE A NEW MIGRATION**
    1. Using the command line terminal, enter into the *server* folder
-7. **TEST THE BACKEND APPLICATION USING POSTMAN**
+3. **TEST THE BACKEND APPLICATION USING POSTMAN**
 
 <br />
 <br />
