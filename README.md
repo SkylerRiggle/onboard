@@ -28,3 +28,9 @@ This README is designed to guide you through the process of creating this simple
     1. Enter the command ``` git add -A ```
     2. Enter the command ``` git commit -m "COMMIT_MESSAGE" ``` where *COMMIT_MESSAGE* is a descriptive tag for your changes
     3. Enter the command ``` git push ```
+
+<br />
+<br />
+<br />
+
+**NEXT TOPIC**
