@@ -84,6 +84,15 @@ This README is designed to guide you through the process of creating this simple
    6. Create a route corresponding to each method written in the ItemsController
    7. The end result should be similar to the Routes file in this repository
 5. **INITIALIZE PGADMIN DATABASE**
+   1. Go to https://www.pgadmin.org/download/ and download PGAdmin
+   2. Once downloaded, open PGAdmin and create a password
+   3. Log into your PostreSQL server
+   4. Create a new database called *onboard-db*
+   5. Open the *server* folder in Visual Studio Code
+   6. Open the file with the path *server/.env* *NOTE: If one does not exist, create one and copy the contents of the .env.example file*
+   7. Change PG_USER to *postgres*
+   8. Change PG_DB_NAME to *onboard-db*
+   9. Change PG_PASSWORD to the password you created earlier for your server
 6. **CREATE A NEW MIGRATION**
    1. Using the command line terminal, enter into the *server* folder
 7. **TEST THE BACKEND APPLICATION USING POSTMAN**
