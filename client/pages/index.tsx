@@ -1,25 +1,26 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import Popup from 'reactjs-popup';
 import Trash from '../assets/images/trash.png'
-
-interface CardData {
-  id: number,
-  name: string,
-  cost: number
-}
 
 const Home: NextPage = () => {
   const [newName, setNewName] = useState('')
   const [newCost, setNewCost] = useState('-1')
+  let localData: Array<{id: number, name: string, cost: number}> = []
   let total = 0
 
-  const data: CardData[] = GetItems()
+  const fetchItems = async () => {
+    const response = await fetch('/api/item/')
+    const items = await response.json()
 
-  data.forEach(item => {
-    total += item.cost
-  });
+    items.data.forEach((item: any) => {
+      localData.push({id:item.id, name:item.name, cost:item.cost})
+      total += item.cost
+    });
+  }
+
+  fetchItems()
 
   return (
     <div className='background'>
@@ -27,22 +28,24 @@ const Home: NextPage = () => {
 
       <nav>
         <ul>
-          {data.map(function (item, index) {
-            return (
-              <li key={index}>
-                <div className='item'>
-                  <div style={{display:'flex', flexDirection:'column', width:'50vw', justifyContent:'center'}}>
-                    <p>{index + 1}. {item.name}</p>
-                    <p>${item.cost}</p>
-                  </div>
+          {
+            localData.map((item) => {
+              return (
+                <li key={item.id}>
+                  <div className='item'>
+                    <div style={{display:'flex', flexDirection:'column', width:'50vw', justifyContent:'center'}}>
+                      <p>{item.name}</p>
+                      <p>${item.cost}</p>
+                    </div>
 
-                  <button onClick={(e) => DeleteItem(item.id)}>
-                    <Image src={Trash} width='75px' height='75px'/>
-                  </button>
-                </div>
-              </li>
-            )
-          })}
+                    <button onClick={(e) => DeleteItem(item.id)}>
+                      <Image src={Trash} width='75px' height='75px'/>
+                    </button>
+                  </div>
+                </li>
+              )
+            })
+          }
         </ul>
       </nav>
 
@@ -69,21 +72,6 @@ const Home: NextPage = () => {
       </div>
     </div>
   )
-}
-
-function GetItems(): CardData[] {
-  const data: CardData[] = []
-
-  const response = fetch('api/item/', {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json'
-    }
-  }).then(response => response.json())
-
-  console.log(response)
-
-  return data
 }
 
 function CreateItem(name: string, cost: number) {
