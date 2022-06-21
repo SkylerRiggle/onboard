@@ -11,9 +11,29 @@ const Home: NextPage = () => {
       <nav>
         <ul>
           <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
+          <ListItem></ListItem>
         </ul>
+      </nav>
 
-        <Popup trigger={<button>ADD ITEM</button>} position='top center'>
+      <Popup trigger={<button>ADD ITEM</button>} position='top center'>
           <div className='popup'>
             <p>Input Item Information:</p>
             
@@ -30,7 +50,6 @@ const Home: NextPage = () => {
             <button onClick={(e) => console.log("ADD")}>ADD</button>
           </div>
         </Popup>
-      </nav>
 
       <div className='footer'>
         <h2>TOTAL: $</h2>
@@ -42,10 +61,10 @@ const Home: NextPage = () => {
 
 const ListItem: NextPage = () => {
   return (
-    <div>
-      <div>
-        <p>NAME</p>
-        <p>$COST</p>
+    <div className='item'>
+      <div style={{display:'flex', flexDirection:'column', width:'50vw', justifyContent:'center'}}>
+        <p className='name'>NAME</p>
+        <p className='cost'>$COST</p>
       </div>
 
       <button onClick={(e) => console.log("DELETE")}>
