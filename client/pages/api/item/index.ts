@@ -1,5 +1,5 @@
-import { NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default function handler(res: NextApiResponse) {
-    return
+export default (req: NextApiRequest, res: NextApiResponse) => {
+  res.status(200).json({ name: 'John Doe' })
 }
