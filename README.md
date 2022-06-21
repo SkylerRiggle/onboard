@@ -30,11 +30,12 @@ This README is designed to guide you through the process of creating this simple
 ``` # UPDATE: .adonisrc.json { commands += "@adonisjs/lucid/build/commands" } ```<br />
 ``` # UPDATE: .adonisrc.json { providers += "@adonisjs/lucid" } ```
     7. When prompted, select the PostgreSQL database driver option
-6. Finally, create your initial project commit by doing the following:
+    8. Using the command line terminal, exit back into the *onboard-program* folder
+1. Finally, create your initial project commit by doing the following:
     1. Enter the command ``` git add -A ```
     2. Enter the command ``` git commit -m "Initial Commit" ```
     3. Enter the command ``` git push -u origin main ```
-7. From here on you can do the following to push changes to your repository:
+2. From here on you can do the following to push changes to your repository:
     1. Enter the command ``` git add -A ```
     2. Enter the command ``` git commit -m "COMMIT_MESSAGE" ``` where *COMMIT_MESSAGE* is a descriptive tag for your changes
     3. Enter the command ``` git push ```
@@ -45,11 +46,25 @@ This README is designed to guide you through the process of creating this simple
 
 **BACKEND APPLICATION**
 1. **CREATE A NEW MODEL**
+   1. Using the command line terminal, enter into the *server* folder
+   2. Enter the command ``` node ace make:model Item ```
 2. **CREATE A NEW VALIDATOR**
+   1. Using the command line terminal, enter into the *server* folder
+   2. Enter the command ``` node ace make:validator ItemValidator ```
 3. **CREATE A NEW CONTROLLER**
+   1. Using the command line terminal, enter into the *server* folder
+   2. Enter the command ``` node ace make:controller ItemsController ```
 4. **CREATE API CONTROLLER ROUTES**
+   1. Open the *server* folder in Visual Studio Code
+   2. Delete the default route
+```js
+Route.get('/', async () => {
+  return { hello: 'world' }
+})
+```
 5. **INITIALIZE PGADMIN DATABASE**
 6. **CREATE A NEW MIGRATION**
+   1. Using the command line terminal, enter into the *server* folder
 7. **TEST THE BACKEND APPLICATION USING POSTMAN**
 
 <br />
