@@ -48,15 +48,34 @@ This README is designed to guide you through the process of creating this simple
 1. **CREATE A NEW MODEL**
    1. Using the command line terminal, enter into the *server* folder
    2. Enter the command ``` node ace make:model Item ```
+   3. Open the *server* folder in Visual Studio Code
+   4. Open the file with the path *server/app/Models/Item.ts*
 2. **CREATE A NEW VALIDATOR**
    1. Using the command line terminal, enter into the *server* folder
    2. Enter the command ``` node ace make:validator ItemValidator ```
+   3. Open the *server* folder in Visual Studio Code
+   4. Open the file with the path *server/app/Validators/ItemValidator.ts*
 3. **CREATE A NEW CONTROLLER**
    1. Using the command line terminal, enter into the *server* folder
    2. Enter the command ``` node ace make:controller ItemsController ```
+   3. Open the *server* folder in Visual Studio Code
+   4. Open the file with the path *server/app/Controllers/Http/ItemsController.ts*
+   5. Uncomment the import at the top of the page which should read 
+```js 
+import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext' 
+```
+   6. Create an async method to get all items called *getAll*
+   7. Create an async method to get an item with a specified id called *get*
+   8. Create an async method to create an item called *create*
+   9. Create an async method to edit an item with a specified id called *edit*
+   10. Create an async method to delete an item with a specified id called *delete*
+   11. The end result should be similar to the Controller file in this repository
+```js
+```
 4. **CREATE API CONTROLLER ROUTES**
    1. Open the *server* folder in Visual Studio Code
-   2. Delete the default route
+   2. Open the file with the path *server/start/routes.ts*
+   3. Delete the default route
 ```js
 Route.get('/', async () => {
   return { hello: 'world' }
@@ -65,22 +84,11 @@ Route.get('/', async () => {
    3. Create a new route group with the prefix *api*
    4. Create a new nested route group within the *api* group with the prefix *item*
    5. Create a route corresponding to each method written in the ItemsController
-   6. The end result should be similar to the following:
-```js
-Route.group(() => {
-  Route.group(() => {
-    Route.get('/', 'ItemsController.getAll')
-    Route.get('/:id', 'ItemsController.get')
-    Route.post('create', 'ItemsController.create')
-    Route.post('edit', 'ItemsController.edit')
-    Route.post('delete', 'ItemsController.delete')
-  }).prefix('item')
-}).prefix('api')
-```
-1. **INITIALIZE PGADMIN DATABASE**
-2. **CREATE A NEW MIGRATION**
+   6. The end result should be similar to the Routes file in this repository
+5. **INITIALIZE PGADMIN DATABASE**
+6. **CREATE A NEW MIGRATION**
    1. Using the command line terminal, enter into the *server* folder
-3. **TEST THE BACKEND APPLICATION USING POSTMAN**
+7. **TEST THE BACKEND APPLICATION USING POSTMAN**
 
 <br />
 <br />
