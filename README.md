@@ -1,6 +1,10 @@
 **PROJECT OVERVIEW**
 This README is designed to guide you through the process of creating this simple application. In this project, you will create both the frontend and backend of a simple website that will manipulate and display information from a database. This project will use Adonis.JS for its backend application, and Next.JS for its frontend application.
 
+<br />
+<br />
+<br />
+
 **PROJECT INITIALIZATION**
 1. Create a new folder called *onboard-program*
 2. Open the command line terminal within this folder
