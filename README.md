@@ -152,7 +152,7 @@ This README is designed to guide you through the process of creating this simple
    1. Using the command line terminal, enter into the *client* folder
    2. Enter the command ``` npm run dev ```
       1. To terminate the test, simply hit ``` ctrl+c ``` in the command line terminal and enter ``` y ```
-   3. Using your browser, enter the URL http://localhost:3000/ to see your website
+   3. While the test is running, use the browser to enter the URL http://localhost:3000/ to see your website
    4. From here, simply tweak the site until you get the desired look and feel
 
 <br />
