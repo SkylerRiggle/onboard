@@ -16,6 +16,7 @@ This README is designed to guide you through the process of creating this simple
     1. Enter the command ``` npx create-next-app@latest --typescript ```
     2. When prompted, enter the application name as *client*
     3. Use all default options to complete the installation
+    4. Enter the command ``` npm i axios ```
 5. To create the backend application, do the following:
     1. Enter the command ``` npm init adonis-ts-app@latest server ```
     2. When prompted, select the *api* installation path
@@ -31,11 +32,11 @@ This README is designed to guide you through the process of creating this simple
 ``` # UPDATE: .adonisrc.json { providers += "@adonisjs/lucid" } ```
     7. When prompted, select the PostgreSQL database driver option
     8. Using the command line terminal, exit back into the *onboard-program* folder
-1. Finally, create your initial project commit by doing the following:
+6. Finally, create your initial project commit by doing the following:
     1. Enter the command ``` git add -A ```
     2. Enter the command ``` git commit -m "Initial Commit" ```
     3. Enter the command ``` git push -u origin main ```
-2. From here on you can do the following to push changes to your repository:
+7. From here on you can do the following to push changes to your repository:
     1. Enter the command ``` git add -A ```
     2. Enter the command ``` git commit -m "COMMIT_MESSAGE" ``` where *COMMIT_MESSAGE* is a descriptive tag for your changes
     3. Enter the command ``` git push ```
@@ -160,3 +161,18 @@ This README is designed to guide you through the process of creating this simple
 <br />
 
 **FRONTEND-BACKEND CONNECTION**
+1. Open the *client* folder in Visual Studio Code
+2. Create a new folder with the path and name *client/pages/api*
+3. Create a new folder with the path and name *client/pages/api/item*
+4. Create a new file with the path *client/pages/api/item/index.ts*
+   1. Within this file, write an export that uses axios to access the *getAll* controller route
+   2. The URL should be http://127.0.0.1:3333/api/item
+   3. The end result should be similar to the Index API file in this repository
+5. Create a new file with the path *client/pages/api/item/delete.ts*
+   1. Within this file, write an export that uses axios to access the *create* controller route
+   2. The URL should be http://127.0.0.1:3333/api/item/delete
+   3. The end result should be similar to the Delete API file in this repository
+6. Create a new file with the path *client/pages/api/item/create.ts*
+   1. Within this file, write an export that uses axios to access the *delete* controller route
+   2. The URL should be http://127.0.0.1:3333/api/item/create
+   3. The end result should be similar to the Create API file in this repository
