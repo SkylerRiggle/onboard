@@ -50,6 +50,9 @@ This README is designed to guide you through the process of creating this simple
    2. Enter the command ``` node ace make:model Item ```
    3. Open the *server* folder in Visual Studio Code
    4. Open the file with the path *server/app/Models/Item.ts*
+   5. Create a new column for the item's name
+   6. Create a new column for the item's cost
+   7. The end result should be similar to the Model file in this repository
 2. **CREATE A NEW VALIDATOR**
    1. Using the command line terminal, enter into the *server* folder
    2. Enter the command ``` node ace make:validator ItemValidator ```
