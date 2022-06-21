@@ -95,6 +95,12 @@ This README is designed to guide you through the process of creating this simple
    9. Change PG_PASSWORD to the password you created earlier for your server
 6. **CREATE A NEW MIGRATION**
    1. Using the command line terminal, enter into the *server* folder
+   2. Enter the command ``` node ace make:migration Item ```
+   3. Open the *server* folder in Visual Studio Code
+   4. Open the file with the path *server/database/migrations/SOME_NUM_items.ts*
+   5. Create a new table column for the string value of name
+   6. Create a new table column for the floating point value of cost
+   7. The end result should be similar to the Migration file in this repository
 7. **TEST THE BACKEND APPLICATION USING POSTMAN**
    1. Go to https://gold-sunset-148328.postman.co/ and make an account
    2. Download the PostMan Desktop Agent
