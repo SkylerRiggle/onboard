@@ -67,6 +67,15 @@ Route.get('/', async () => {
    5. Create a route corresponding to each method written in the ItemsController
    6. The end result should be similar to the following:
 ```js
+Route.group(() => {
+  Route.group(() => {
+    Route.get('/', 'ItemsController.getAll')
+    Route.get('/:id', 'ItemsController.get')
+    Route.post('create', 'ItemsController.create')
+    Route.post('edit', 'ItemsController.edit')
+    Route.post('delete', 'ItemsController.delete')
+  }).prefix('item')
+}).prefix('api')
 ```
 1. **INITIALIZE PGADMIN DATABASE**
 2. **CREATE A NEW MIGRATION**
