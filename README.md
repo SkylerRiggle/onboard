@@ -43,4 +43,17 @@ This README is designed to guide you through the process of creating this simple
 <br />
 <br />
 
-**NEXT TOPIC**
+**BACKEND APPLICATION**
+1. **CREATE A NEW MODEL**
+2. **CREATE A NEW VALIDATOR**
+3. **CREATE A NEW CONTROLLER**
+4. **CREATE API CONTROLLER ROUTES**
+5. **INITIALIZE PGADMIN DATABASE**
+6. **CREATE A NEW MIGRATION**
+7. **TEST THE BACKEND APPLICATION USING POSTMAN**
+
+<br />
+<br />
+<br />
+
+**FRONTEND APPLICATION**
