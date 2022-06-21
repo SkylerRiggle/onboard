@@ -9,28 +9,7 @@ const Home: NextPage = () => {
       <h1>Shopping List</h1>
 
       <nav>
-        <ul>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-          <ListItem></ListItem>
-        </ul>
+        <ul />
       </nav>
 
       <Popup trigger={<button>ADD ITEM</button>} position='top center'>

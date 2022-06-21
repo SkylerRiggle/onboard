@@ -13,6 +13,7 @@ body {
 
 nav ul {
   width: fit-content;
+  min-width: 50vw;
   height: 60vh;
 
   overflow: hidden;
