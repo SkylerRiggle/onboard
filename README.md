@@ -87,6 +87,32 @@ This README is designed to guide you through the process of creating this simple
 6. **CREATE A NEW MIGRATION**
    1. Using the command line terminal, enter into the *server* folder
 7. **TEST THE BACKEND APPLICATION USING POSTMAN**
+   1. Go to https://gold-sunset-148328.postman.co/ and make an account
+   2. Download the PostMan Desktop Agent
+   3. Enter into a personal workspace
+   4. Create a new collection titled *onboarding*
+   5. Within the *onboarding* collection, add a new GET request called getAll
+      1. The reuest URL should be http://localhost:3333/api/item
+   6. Within the *onboarding* collection, add a new GET request called get
+      1. The reuest URL should be http://localhost:3333/api/item/:id
+      2. A new path variable will appear where you can specify the item id
+   7. Within the *onboarding* collection, add a new POST request called create
+      1. The reuest URL should be http://localhost:3333/api/item/create
+      2. In the body tab, specify the input to *raw* and *JSON*
+      3. Here you can now pass JSON data for the item name and cost
+   8. Within the *onboarding* collection, add a new POST request called edit
+      1. The reuest URL should be http://localhost:3333/api/item/edit
+      2. In the body tab, specify the input to *raw* and *JSON*
+      3. Here you can now pass JSON data for the item id, name, and cost
+   9. Within the *onboarding* collection, add a new POST request called delete
+      1. The reuest URL should be http://localhost:3333/api/item/delete
+      2. In the body tab, specify the input to *raw* and *JSON*
+      3. Here you can now pass JSON data for the item id
+   10. Using the command line terminal, enter into the *server* folder
+   11. Enter the command ``` node ace serve --watch ```
+   12. Ensure that the database is running in PGAdmin
+   13. Run the PostMan Desktop Agent *NOTE: This will not open any windows*
+   14. Run each request to see if the expected results are produced
 
 <br />
 <br />
