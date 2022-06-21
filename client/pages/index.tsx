@@ -1,9 +1,13 @@
 import type { NextPage } from 'next'
 import Image from 'next/image'
+import { useState } from 'react';
 import Popup from 'reactjs-popup';
 import Trash from '../assets/images/trash.png'
 
 const Home: NextPage = () => {
+  const [newName, setNewName] = useState('NAME')
+  const [newCost, setNewCost] = useState('0')
+
   return (
     <div className='background'>
       <h1>Shopping List</h1>
@@ -18,15 +22,15 @@ const Home: NextPage = () => {
             
             <div>
               <label>Name: </label>
-              <input type="text" />
+              <input type="text" onChange={(e) => setNewName(e.target.value)}/>
             </div>
 
             <div>
               <label>Cost: </label>
-              <input type="number" />
+              <input type="number" onChange={(e) => setNewCost(e.target.value)}/>
             </div>
 
-            <button onClick={(e) => console.log("ADD")}>ADD</button>
+            <button onClick={(e) => console.log(newName + ' ' + newCost)}>ADD</button>
           </div>
         </Popup>
 
