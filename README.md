@@ -58,6 +58,11 @@ This README is designed to guide you through the process of creating this simple
    2. Enter the command ``` node ace make:validator ItemValidator ```
    3. Open the *server* folder in Visual Studio Code
    4. Open the file with the path *server/app/Validators/ItemValidator.ts*
+   5. At the top of the file, be sure to import *rules* alongside schema and CustomMessages
+   6. In the messages body, create a new message for required fields
+   7. In the schema body, create a new string schema for the name that uses the *required* rule
+   8. In the schema body, create a new number schema for the cost that uses the *required* rule
+   9. The end result should be similar to the Validator file in this repository
 3. **CREATE A NEW CONTROLLER**
    1. Using the command line terminal, enter into the *server* folder
    2. Enter the command ``` node ace make:controller ItemsController ```
