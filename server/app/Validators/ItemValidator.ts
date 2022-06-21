@@ -24,8 +24,8 @@ export default class ItemValidator {
    *    ```
    */
   public schema = schema.create({
-    name: schema.string({}, [rules.required]),
-    cost: schema.number([rules.required])
+    name: schema.string({}, [rules.required()]),
+    cost: schema.number([rules.required()]),
   })
 
   /**
@@ -40,6 +40,6 @@ export default class ItemValidator {
    *
    */
   public messages: CustomMessages = {
-    'required': '{{field}} is required for Items.'
+    'required': '{{field}} is required for Items.',
   }
 }
