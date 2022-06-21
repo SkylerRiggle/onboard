@@ -22,7 +22,7 @@ This README is designed to guide you through the process of creating this simple
     3. Use all default options to complete the installation
     4. Using the command line terminal, enter into the new *server* folder
     5. Enter the command ``` npm i @adonisjs/lucid ```
-    6. Enter the following command all at once 
+    6. Enter the following command all at once<br />
 ``` node ace configure @adonisjs/lucid ```
 ``` # CREATE: config/database.ts ```
 ``` # UPDATE: .env,.env.example ```
