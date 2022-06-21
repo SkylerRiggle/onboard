@@ -60,10 +60,7 @@ This README is designed to guide you through the process of creating this simple
    2. Enter the command ``` node ace make:controller ItemsController ```
    3. Open the *server* folder in Visual Studio Code
    4. Open the file with the path *server/app/Controllers/Http/ItemsController.ts*
-   5. Uncomment the import at the top of the page which should read 
-```js 
-import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext' 
-```
+   5. Uncomment the import at the top for the HttpContextContract
    6. Create an async method to get all items called *getAll*
    7. Create an async method to get an item with a specified id called *get*
    8. Create an async method to create an item called *create*
@@ -74,15 +71,10 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
    1. Open the *server* folder in Visual Studio Code
    2. Open the file with the path *server/start/routes.ts*
    3. Delete the default route
-```js
-Route.get('/', async () => {
-  return { hello: 'world' }
-})
-```
-   3. Create a new route group with the prefix *api*
-   4. Create a new nested route group within the *api* group with the prefix *item*
-   5. Create a route corresponding to each method written in the ItemsController
-   6. The end result should be similar to the Routes file in this repository
+   4. Create a new route group with the prefix *api*
+   5. Create a new nested route group within the *api* group with the prefix *item*
+   6. Create a route corresponding to each method written in the ItemsController
+   7. The end result should be similar to the Routes file in this repository
 5. **INITIALIZE PGADMIN DATABASE**
 6. **CREATE A NEW MIGRATION**
    1. Using the command line terminal, enter into the *server* folder
