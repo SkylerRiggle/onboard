@@ -70,8 +70,6 @@ import type { HttpContextContract } from '@ioc:Adonis/Core/HttpContext'
    9. Create an async method to edit an item with a specified id called *edit*
    10. Create an async method to delete an item with a specified id called *delete*
    11. The end result should be similar to the Controller file in this repository
-```js
-```
 4. **CREATE API CONTROLLER ROUTES**
    1. Open the *server* folder in Visual Studio Code
    2. Open the file with the path *server/start/routes.ts*
