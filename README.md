@@ -17,3 +17,7 @@
     a. Enter the command ``` git add -A ```
     b. Enter the command ``` git commit -m "Initial Commit" ```
     c. Enter the command ``` git push -u origin main ```
+7. From here on you can do the following to push changes to your repository:
+    a. Enter the command ``` git add -A ```
+    b. Enter the command ``` git commit -m "COMMIT_MESSAGE" ``` where *COMMIT_MESSAGE* is a descriptive tag for your changes
+    c. Enter the command ``` git push ```
