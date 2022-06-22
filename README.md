@@ -5,6 +5,21 @@ This README is designed to guide you through the process of creating this simple
 <br />
 <br />
 
+**DOWNLOADING THIS REPOSITORY [NOTE: THIS IS OPTIONAL AND SHOULD ONLY BE USED AS A REFERENCE]**
+1. Using the command line terminal, enter into the folder you'd like to hold this application
+2. Enter the command ``` git clone https://github.com/SkylerRiggle/onboard ```
+3. Using the command line terminal, enter into the folder you've just downloaded
+4. Using the command line terminal, enter into the *client* folder
+5. Enter the command ``` npm install ```
+6. Using the command line terminal, enter into the *server* folder
+7. Enter the command ``` npm install ```
+8. Inside of the *server* folder, create a file titled *.env*
+9. Inside of the new *.env* file copy the contents of the file titled *.env.example*
+
+<br />
+<br />
+<br />
+
 **PROJECT INITIALIZATION**
 1. Create a new folder called *onboard-program*
 2. Open the command line terminal within this folder
