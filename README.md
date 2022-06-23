@@ -14,8 +14,9 @@ This README is designed to guide you through the process of creating this simple
 5. Enter the command ``` npm install ```
 6. Using the command line terminal, enter into the *server* folder
 7. Enter the command ``` npm install ```
-8. Inside of the *server* folder, create a file titled *.env*
-9. Inside of the new *.env* file copy the contents of the file titled *.env.example*
+8. Enter the command ``` node ace migration:run ```
+9. Inside of the *server* folder, create a file titled *.env*
+10. Inside of the new *.env* file copy the contents of the file titled *.env.example*
 
 <br />
 <br />
