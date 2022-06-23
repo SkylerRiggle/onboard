@@ -1,3 +1,4 @@
+![alt text](https://k20center.ou.edu/wp-content/uploads/2020/02/K20Condensed-1.png)
 **PROJECT OVERVIEW**<br />
 This README is designed to guide you through the process of creating this simple shopping list application. In this project, you will create both the frontend and backend of a simple website that will manipulate and display information from a database. This project will use Adonis.JS for its backend application, and Next.JS for its frontend application.
 
