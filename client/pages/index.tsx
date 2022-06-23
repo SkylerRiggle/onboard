@@ -10,17 +10,20 @@ const Home: NextPage = () => {
   let localData: Array<{id: number, name: string, cost: number}> = []
   let total = 0
 
-  const fetchItems = async () => {
-    const response = await fetch('/api/item/')
-    const items = await response.json()
+  localData.push({id:0, name:"Hello World!", cost:5.23})
+  localData.push({id:0, name:"Hello World!", cost:5.23})
+  localData.push({id:0, name:"Hello World!", cost:5.23})
+  localData.push({id:0, name:"Hello World!", cost:5.23})
+  localData.push({id:0, name:"Hello World!", cost:5.23})
+  localData.push({id:0, name:"Hello World!", cost:5.23})
+  localData.push({id:0, name:"Hello World!", cost:5.23})
+  localData.push({id:0, name:"Hello World!", cost:5.23})
+  localData.push({id:0, name:"Hello World!", cost:5.23})
+  localData.push({id:0, name:"Hello World!", cost:5.23})
 
-    items.data.forEach((item: any) => {
-      localData.push({id:item.id, name:item.name, cost:item.cost})
-      total += item.cost
-    });
-  }
-
-  fetchItems()
+  localData.forEach(item => {
+    total += item.cost
+  });
 
   return (
     <div className='background'>
@@ -39,7 +42,7 @@ const Home: NextPage = () => {
                     </div>
 
                     <button onClick={(e) => DeleteItem(item.id)}>
-                      <Image src={Trash} width='75px' height='75px'/>
+                      <Image src={Trash} width='75px' height='75px' alt='Delete'/>
                     </button>
                   </div>
                 </li>
@@ -68,7 +71,7 @@ const Home: NextPage = () => {
       </Popup>
 
       <div className='footer'>
-        <h2>TOTAL: ${total}</h2>
+        <h2>TOTAL: ${Intl.NumberFormat('en-US').format(total)}</h2>
       </div>
     </div>
   )
