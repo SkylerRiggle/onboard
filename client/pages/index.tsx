@@ -4,26 +4,42 @@ import { useState } from 'react';
 import Popup from 'reactjs-popup';
 import Trash from '../assets/images/trash.png'
 
-const Home: NextPage = () => {
+function CreateItem(name: string, cost: number) {
+  if (name.length === 0 || cost < 0) {
+    alert('Invalid Input!')
+    return
+  }
+
+  fetch('api/item/create', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({name, cost})
+  })
+
+  window.location.reload()
+}
+
+function DeleteItem(id: number) {
+  fetch('api/item/delete', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({id})
+  })
+
+  window.location.reload()
+}
+
+interface ListData {
+  items: {id: number, name: string, cost: number}[]
+}
+
+export default function Home({ prop }: {prop: {id: number, name: string, cost: number}[]}) {
   const [newName, setNewName] = useState('')
   const [newCost, setNewCost] = useState('-1')
-  let localData: Array<{id: number, name: string, cost: number}> = []
-  let total = 0
-
-  localData.push({id:0, name:"Hello World!", cost:5.23})
-  localData.push({id:0, name:"Hello World!", cost:5.23})
-  localData.push({id:0, name:"Hello World!", cost:5.23})
-  localData.push({id:0, name:"Hello World!", cost:5.23})
-  localData.push({id:0, name:"Hello World!", cost:5.23})
-  localData.push({id:0, name:"Hello World!", cost:5.23})
-  localData.push({id:0, name:"Hello World!", cost:5.23})
-  localData.push({id:0, name:"Hello World!", cost:5.23})
-  localData.push({id:0, name:"Hello World!", cost:5.23})
-  localData.push({id:0, name:"Hello World!", cost:5.23})
-
-  localData.forEach(item => {
-    total += item.cost
-  });
 
   return (
     <div className='background'>
@@ -32,7 +48,7 @@ const Home: NextPage = () => {
       <nav>
         <ul>
           {
-            localData.map((item) => {
+            prop.map((item: {id: number, name: string, cost: number}) => {
               return (
                 <li key={item.id}>
                   <div className='item'>
@@ -70,40 +86,21 @@ const Home: NextPage = () => {
           </div>
       </Popup>
 
-      <div className='footer'>
-        <h2>TOTAL: ${Intl.NumberFormat('en-US').format(total)}</h2>
-      </div>
+      <div className='footer' />
     </div>
   )
 }
 
-function CreateItem(name: string, cost: number) {
-  if (name.length === 0 || cost < 0) {
-    alert('Invalid Input!')
-    return
+export async function getStaticProps() {
+  const response = await fetch('http://localhost:3000/api/item')
+  const listInfo = await response.json()
+  const data = listInfo.data
+
+  if (!data) { return { props: {prop: []}} }
+
+  return {
+    props: {
+      prop: data
+    }
   }
-
-  fetch('api/item/create', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({name, cost})
-  })
-
-  window.location.reload()
 }
-
-function DeleteItem(id: number) {
-  fetch('api/item/delete', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({id})
-  })
-
-  window.location.reload()
-}
-
-export default Home
