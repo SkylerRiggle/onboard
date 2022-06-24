@@ -3,6 +3,13 @@ import { useState } from 'react';
 import Popup from 'reactjs-popup';
 import Trash from '../assets/images/trash.png'
 
+/**
+ * @name CreateItem
+ * @description Creates a new item for the list
+ * 
+ * @param name The name of the new item
+ * @param cost The cost of the new item
+ */
 function CreateItem(name: string, cost: number) {
   //Remove leading and trailing white space
   //Accounts for space-only and indented names
@@ -27,6 +34,12 @@ function CreateItem(name: string, cost: number) {
   window.location.reload()
 }
 
+/**
+ * @name DeleteItem
+ * @description Deletes an item with a specified id from the list
+ * 
+ * @param id The id of the item to delete
+ */
 function DeleteItem(id: number) {
   //Delete the item with a specified id using the client api route
   fetch('api/item/delete', {
@@ -39,10 +52,6 @@ function DeleteItem(id: number) {
 
   //Refresh the page to update the display
   window.location.reload()
-}
-
-interface ListData {
-  items: {id: number, name: string, cost: number}[]
 }
 
 export default function Home({ prop }: {prop: {id: number, name: string, cost: number}[]}) {
