@@ -1,15 +1,20 @@
-import type { NextPage } from 'next'
 import Image from 'next/image'
 import { useState } from 'react';
 import Popup from 'reactjs-popup';
 import Trash from '../assets/images/trash.png'
 
 function CreateItem(name: string, cost: number) {
+  //Remove leading and trailing white space
+  //Accounts for space-only and indented names
+  name = name.trim()
+
+  //Invalid input case
   if (name.length === 0 || cost < 0) {
     alert('Invalid Input!')
     return
   }
 
+  //Create a new item with a set name and cost using the client api route
   fetch('api/item/create', {
     method: 'POST',
     headers: {
@@ -18,10 +23,12 @@ function CreateItem(name: string, cost: number) {
     body: JSON.stringify({name, cost})
   })
 
+  //Refresh the page to update the display
   window.location.reload()
 }
 
 function DeleteItem(id: number) {
+  //Delete the item with a specified id using the client api route
   fetch('api/item/delete', {
     method: 'POST',
     headers: {
@@ -30,6 +37,7 @@ function DeleteItem(id: number) {
     body: JSON.stringify({id})
   })
 
+  //Refresh the page to update the display
   window.location.reload()
 }
 
@@ -38,8 +46,15 @@ interface ListData {
 }
 
 export default function Home({ prop }: {prop: {id: number, name: string, cost: number}[]}) {
+  //New item data storage
   const [newName, setNewName] = useState('')
   const [newCost, setNewCost] = useState('-1')
+
+  //Collect a total for the shopping list
+  let total = 0
+  prop.forEach(item => {
+    total += item.cost
+  });
 
   return (
     <div className='background'>
@@ -86,18 +101,23 @@ export default function Home({ prop }: {prop: {id: number, name: string, cost: n
           </div>
       </Popup>
 
-      <div className='footer' />
+      <div className='footer'>
+        <h2>Total: ${Math.round(total * 100) / 100}</h2>
+      </div>
     </div>
   )
 }
 
 export async function getStaticProps() {
+  //Gather data from the client api route
   const response = await fetch('http://localhost:3000/api/item')
   const listInfo = await response.json()
   const data = listInfo.data
 
+  //Data not found case
   if (!data) { return { props: {prop: []}} }
 
+  //Data found case
   return {
     props: {
       prop: data

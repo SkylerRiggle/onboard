@@ -1,9 +1,10 @@
 import axios from "axios"
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+const Delete = async (req: NextApiRequest, res: NextApiResponse) => {
   const url: string = 'http://127.0.0.1:3333/api/item/delete'
 
+  //Delete an item from the server
   await axios
     .post(url, {
         id: req.body.id
@@ -12,3 +13,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
         res.status(400).json({ err })
     })
 }
+
+export default Delete
