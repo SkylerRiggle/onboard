@@ -20,7 +20,10 @@
 
 import Route from '@ioc:Adonis/Core/Route'
 
+//API Routes
 Route.group(() => {
+
+  // Item API Routes
   Route.group(() => {
     Route.get('/', 'ItemsController.getAll')
     Route.get('/:id', 'ItemsController.get')
@@ -28,4 +31,5 @@ Route.group(() => {
     Route.post('edit', 'ItemsController.edit')
     Route.post('delete', 'ItemsController.delete')
   }).prefix('item')
+
 }).prefix('api')
