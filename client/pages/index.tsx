@@ -10,7 +10,7 @@ import Trash from '../assets/images/trash.png'
  * @param name The name of the new item
  * @param cost The cost of the new item
  */
-function CreateItem(name: string, cost: number) {
+async function CreateItem(name: string, cost: number) {
   //Remove leading and trailing white space
   //Accounts for space-only and indented names
   name = name.trim()
@@ -22,7 +22,7 @@ function CreateItem(name: string, cost: number) {
   }
 
   //Create a new item with a set name and cost using the client api route
-  fetch('api/item/create', {
+  await fetch('api/item/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -40,9 +40,9 @@ function CreateItem(name: string, cost: number) {
  * 
  * @param id The id of the item to delete
  */
-function DeleteItem(id: number) {
+async function DeleteItem(id: number) {
   //Delete the item with a specified id using the client api route
-  fetch('api/item/delete', {
+  await fetch('api/item/delete', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

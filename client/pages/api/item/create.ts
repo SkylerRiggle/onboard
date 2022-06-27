@@ -9,6 +9,8 @@ const Create = async (req: NextApiRequest, res: NextApiResponse) => {
     .post(url, {
         name: req.body.name,
         cost: req.body.cost
+    }).then(() => {
+        res.status(200).json("Created")
     })
     .catch(({ err }) => {
         res.status(400).json({ err })

@@ -8,6 +8,8 @@ const Delete = async (req: NextApiRequest, res: NextApiResponse) => {
   await axios
     .post(url, {
         id: req.body.id
+    }).then(() => {
+        res.status(200).json("Deleted")
     })
     .catch(({ err }) => {
         res.status(400).json({ err })
