@@ -50,12 +50,13 @@ This README is designed to guide you through the process of creating this simple
     7. When prompted, select the PostgreSQL database driver option
     8. Using the command line terminal, exit back into the *onboard-program* folder
 6. Finally, create your initial project commit by doing the following:
-    1. Enter the command ``` git remote add origin YOUR_REPO_URL``` where *YOUR_REPO_URL* is the url for a repo you create using your GitHub account
-    2. Enter the command ``` git branch -M main" ```
+    1. Enter the command ``` git add -A ```
+    2. Enter the command ``` git commit -m "Initial Commit" ```
+    3. Enter the command ``` git push -u origin main ```
 7. From here on you can do the following to push changes to your repository:
     1. Enter the command ``` git add -A ```
     2. Enter the command ``` git commit -m "COMMIT_MESSAGE" ``` where *COMMIT_MESSAGE* is a descriptive tag for your changes
-    3. Enter the command ``` git push -u origin main ``` **NOTE: After this point, you will only need to enter *git push***
+    3. Enter the command ``` git push ```
 
 <br />
 <br />
