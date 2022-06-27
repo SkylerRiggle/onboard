@@ -22,13 +22,19 @@ async function CreateItem(name: string, cost: number) {
   }
 
   //Create a new item with a set name and cost using the client api route
-  await fetch('api/item/create', {
+  const response = await fetch('api/item/create', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({name, cost})
   })
+
+  //POST error case
+  if (!response.ok) {
+    alert('Error adding item: Please try again.')
+    return
+  }
 
   //Refresh the page to update the display
   window.location.reload()
@@ -42,13 +48,19 @@ async function CreateItem(name: string, cost: number) {
  */
 async function DeleteItem(id: number) {
   //Delete the item with a specified id using the client api route
-  await fetch('api/item/delete', {
+  const response = await fetch('api/item/delete', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
     },
     body: JSON.stringify({id})
   })
+
+  //POST error case
+  if (!response.ok) {
+    alert('Error deleting item: Please try again.')
+    return
+  }
 
   //Refresh the page to update the display
   window.location.reload()
